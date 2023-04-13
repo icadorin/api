@@ -1,13 +1,14 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import { resolve } from 'path';
 
-import homeRoutes from './src/routes/homeRoutes';
-import userRoutes from './src/routes/userRoutes';
-import tokenRoutes from './src/routes/tokenRoutes';
-import studentRoutes from './src/routes/studentRoutes';
-import profilePictureRoutes from './src/routes/profilePictureRoutes';
+import homeRoutes from './routes/homeRoutes';
+import userRoutes from './routes/userRoutes';
+import tokenRoutes from './routes/tokenRoutes';
+import studentRoutes from './routes/studentRoutes';
+import profilePictureRoutes from './routes/profilePictureRoutes';
 
-import './src/database';
+import './database';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ class App {
   midddlewares() {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
+    this.app.use(express.static(resolve(__dirname, 'uploads')));
   }
 
   routes() {
