@@ -26,11 +26,11 @@ class App {
   }
 
   routes() {
-    this.app.use('/', homeRoutes);
-    this.app.use('/users/', userRoutes);
-    this.app.use('/tokens/', tokenRoutes);
-    this.app.use('/students/', studentRoutes);
-    this.app.use('/profile_picture/', profilePictureRoutes);
+    this.app.use('/api', homeRoutes);
+    this.app.use('/api/users/', userRoutes);
+    this.app.use('/api/tokens/', tokenRoutes);
+    this.app.use('/api/students/', studentRoutes);
+    this.app.use('/api/profile_picture/', profilePictureRoutes);
   }
 }
 

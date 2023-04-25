@@ -26,11 +26,11 @@ class App {
   }
 
   routes() {
-    this.app.use('/', _homeRoutes2.default);
-    this.app.use('/users/', _userRoutes2.default);
-    this.app.use('/tokens/', _tokenRoutes2.default);
-    this.app.use('/students/', _studentRoutes2.default);
-    this.app.use('/profile_picture/', _profilePictureRoutes2.default);
+    this.app.use('/api', _homeRoutes2.default);
+    this.app.use('/api/users/', _userRoutes2.default);
+    this.app.use('/api/tokens/', _tokenRoutes2.default);
+    this.app.use('/api/students/', _studentRoutes2.default);
+    this.app.use('/api/profile_picture/', _profilePictureRoutes2.default);
   }
 }
 
