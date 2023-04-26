@@ -4,14 +4,14 @@ var _path = require('path');
 const random = () => Math.floor(Math.random() * 10000 + 10000);
 
 exports. default = {
-  storage: _multer2.default.diskStorage({
-    fileFilter: (req, file, cb) => {
-      if (file.mimetype !== 'image/png' && file.mimetype !== 'image/jpeg') {
-        return cb(new _multer2.default.MulterError('Arquivo precisa ser PNG ou JPG.'));
-      }
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype !== 'image/png' && file.mimetype !== 'image/jpeg') {
+      return cb(new _multer2.default.MulterError('Arquivo precisa ser PNG ou JPG.'));
+    }
 
-      return cb(null, true);
-    },
+    return cb(null, true);
+  },
+  storage: _multer2.default.diskStorage({
     destination: (req, file, cb) => {
       cb(null, _path.resolve.call(void 0, __dirname, '..', '..', 'uploads', 'images'));
     },
