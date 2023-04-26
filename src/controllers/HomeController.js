@@ -1,6 +1,15 @@
+import appConfig from '../config/appConfig';
+
 class HomeController {
   async index(req, res) {
-    res.json('index');
+    res.json(
+      {
+        RotasPúblicas: {
+          Alunos: `${appConfig.url}/api/students`,
+          Usuários: `${appConfig.url}/api/users`,
+        },
+      },
+    );
   }
 }
 
