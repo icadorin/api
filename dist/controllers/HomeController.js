@@ -4,9 +4,9 @@ class HomeController {
   async index(req, res) {
     res.json(
       {
-        RotasPúblicas: {
-          Alunos: `${_appConfig2.default.url}/api/students`,
-          Usuários: `${_appConfig2.default.url}/api/users`,
+        rotasPublicas: {
+          alunos: `${_appConfig2.default.url}/api/students`,
+          usuarios: `${_appConfig2.default.url}/api/users`,
         },
       },
     );
